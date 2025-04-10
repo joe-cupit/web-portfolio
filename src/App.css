@@ -1,5 +1,59 @@
 #root {
-  max-width: 1280px;
   margin: 0 auto;
   text-align: center;
+
+  font-family: "Urbanist", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+
+.title-group {
+  display: grid;
+  gap: 1.5em;
+}
+
+.title {
+  font-size: 4.5em;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.subtitle {
+  font-size: 1.5em;
+  font-weight: 500;
+  line-height: 1;
+}
+
+
+
+.projects-page {
+  display: grid;
+  gap: 4em;
+}
+
+.projects-list {
+  list-style: none;
+
+  display: grid;
+  grid-template-columns: 200px 2fr;
+  gap: 2em;
+
+  margin-inline: 1em;
+}
+
+.project {
+  display: contents;
+}
+
+.project-details {
+  text-align: left;
+}
+.project-showcase {
+  background-color: #fff1;
+  border: 2px solid white;
+  aspect-ratio: 16 / 9;
+
+  align-content: center;
+  justify-items: center;
 }

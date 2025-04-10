@@ -1,12 +1,19 @@
+import { BrowserRouter, Route, Routes } from 'react-router'
 import './App.css'
+
+import Home from './pages/Home'
+import Projects from './pages/Projects'
 
 
 function App() {
 
   return (
-    <>
-      <h1>Joe Cupit</h1>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/projects' element={<Projects />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
