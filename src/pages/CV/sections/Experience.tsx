@@ -1,3 +1,4 @@
+import OuterLink from "../../../components/Links/OuterLink";
 import CVEntry from "./Entry";
 
 
@@ -17,7 +18,7 @@ export default function Experience({ ref } : { ref: React.RefObject<HTMLElement|
         desc="Studied topics including machine learning, AI, software engineering, and quantum computing, with a focus on algorithm design and applied modelling. Built predictive models using neural networks in Python, and developed strong analytical skills through modules in graph theory and calculus. Worked on team software projects using Git, and authored academic reports on optimisation and mathematical modelling."
         tools={["Python", "Java", "JavaScript", "HTML & CSS", "MATLAB", "C/C++"]}
       />
-      <a href="./cv.pdf" target="_blank" className="cv-section__link">View Full CV</a>
+      <OuterLink href="./cv/cv.pdf">View Full CV</OuterLink>
     </section>
   )
 }

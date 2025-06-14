@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 import CVEntry from "./Entry";
+import InnerLink from "../../../components/Links/InnerLink";
 
 
 export default function Projects({ ref } : { ref: React.RefObject<HTMLElement|null> }) {
@@ -24,7 +25,7 @@ export default function Projects({ ref } : { ref: React.RefObject<HTMLElement|nu
         desc="Built an interactive Python app using Tkinter to simulate the spread of infectious diseases under different conditions like population density and intervention strategies. Used multithreading to support real-time simulation and responsive user interaction, with parallel runs for visual comparison."
         tools={["Python", "TKinter", "Matplotlib"]}
       />
-      <Link to="/projects" className="cv-section__link">View All Projects</Link>
+      <InnerLink to="/projects">View All Projects</InnerLink>
     </section>
   )
 }
