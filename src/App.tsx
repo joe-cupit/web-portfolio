@@ -4,17 +4,19 @@ import './App.css'
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import Projects from './pages/Projects'
+import CV from './pages/CV/CV'
 
 
 function App() {
 
   return (
     <BrowserRouter>
-      <Navbar />
+      {/* <Navbar /> */}
 
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/projects' element={<Projects />} />
+        <Route path='/cv' element={<CV />} />
       </Routes>
     </BrowserRouter>
   )
