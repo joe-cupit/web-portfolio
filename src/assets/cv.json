@@ -1,0 +1,52 @@
+{
+  "name": "Joe Cupit",
+  "tag": "ML Software Developer",
+  "intro": "I love Python, making websites, and climbing mountains.",
+  "sections": {
+    "about": [
+        "I'm a developer passionate about building complete and functional products for the real world. I love design and effectiveness.",
+        "I recently finished my BSc in Computer Science and Mathematics at [The University of Manchester](https://www.manchester.ac.uk/). I went on to work on products and websites at [Vocalyse](https://www.vocalyse.co.uk/).",
+        "When I'm not programming, you may find me up a mountain in The Lake District, or watching a film, or going for gold stake on [Balatro](https://www.playbalatro.com/)."
+    ],
+    "experience": [
+      {
+        "title": "Software Developer Intern",
+        "subtitle": "Vocalyse",
+        "dates": ["2024", "2025"],
+        "description": "Worked as a Software Developer Intern on research-focused tools in forensic linguistics. Ported legacy Java apps to Python, built React-based interfaces, and deployed them with Docker on a dedicated server. Also maintained educational tools used by 100+ students, collaborated with staff on bespoke research software, and redesigned the company website to boost client engagement.",
+        "tools": ["Python", "Java", "JavaScript", "React", "Docker"],
+        "link": "https://www.vocalyse.co.uk"
+      },
+      {
+        "title": "BSc Computer Science and Mathematics",
+        "subtitle": "The University of Manchester",
+        "dates": ["2021", "2024"],
+        "description": "Studied topics including machine learning, AI, software engineering, and quantum computing, with a focus on algorithm design and applied modelling. Built predictive models using neural networks in Python, and developed strong analytical skills through modules in graph theory and calculus. Worked on team software projects using Git, and authored academic reports on optimisation and mathematical modelling.",
+        "tools": ["Python", "Java", "JavaScript", "HTML/CSS", "MATLAB", "C/C++"]
+      }
+    ],
+    "projects": [
+      {
+        "title": "Wainroutes.co.uk",
+        "subtitle": "A Lake District Route Site",
+        "imageUrl": "wainroutes.png",
+        "description": "Built a React web app for planning and exploring Wainwright walks in the Lake District, featuring an interactive GPX route editor. Automated weather updates with Python scripts pulling data from the Met Office API, and optimised performance by serving static files via Cloudflare R2 with a custom worker.",
+        "tools": ["React", "JavaScript", "Python", "Cloudflare R2", "Met Office API"]
+      },
+      {
+        "title": "Graph Colouring Software Tool",
+        "subtitle": "A Mathematics Research Tool",
+        "imageUrl": "a-software-tool-to-illustrate-graph-colouring.png",
+        "description": "Created a Python-based research tool for experimenting with and benchmarking graph colouring algorithms. Included features like random graph generation, side-by-side algorithm comparison, and visual performance analysis across varying graph types. Backed by independent research and a first-class academic report on algorithm efficiency and real-world applicability.",
+        "tools": ["Python", "CherryPy", "JavaScript", "HTML/CSS"]
+      },
+      {
+        "title": "Epidemic Simulator",
+        "subtitle": "Simulation Tool",
+        "imageUrl": "wonderlane-b9-odQi5oDo-unsplash.jpg",
+        "description": "Built an interactive Python app using Tkinter to simulate the spread of infectious diseases under different conditions like population density and intervention strategies. Used multithreading to support real-time simulation and responsive user interaction, with parallel runs for visual comparison.",
+        "tools": ["Python", "Tkinter", "Matplotlib"]
+      }
+    ]
+  }
+}
