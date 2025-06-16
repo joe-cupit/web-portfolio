@@ -321,6 +321,40 @@
   content: ""
 }
 
+.cv-section__skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(4.2rem, 1fr));
+  column-gap: 1.5rem;
+  row-gap: 1rem;
+}
+.cv-skills_skill {
+  font-size: var(--fs-200);
+  text-align: center;
+  
+  display: grid;
+  /* gap: 0.25rem; */
+
+  cursor: default;
+  transition: color 100ms;
+}
+.cv-skills_skill:hover {
+  color: var(--clr-text-main);
+}
+.cv-skills_skill-icon {
+  background: hsl(from var(--clr-text-light) h s l / 5%);
+  border-radius: 0.5rem;
+  aspect-ratio: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.cv-skills_skill-icon svg {
+  max-width: min(50%, 8vw);
+  max-height: min(50%, 8vw);
+}
+
 
 @media (max-width: 64rem) {
   .cv-page {

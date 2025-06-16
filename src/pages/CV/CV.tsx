@@ -4,6 +4,7 @@ import Experience from "./sections/Experience";
 import Projects from "./sections/Projects";
 
 import CVJson from "../../assets/cv.json";
+import Skills from "./sections/Skills";
 
 
 export type ExperienceType = {
@@ -29,7 +30,9 @@ type CVType = {
   sections: {
     about: string[];
     experience: ExperienceType[];
-    projects: ProjectType[]};
+    projects: ProjectType[];
+    skills: string[];
+  }
 }
 
 
@@ -42,7 +45,8 @@ export default function CV() {
   const aboutRef = useRef<HTMLElement>(null);
   const experienceRef = useRef<HTMLElement>(null);
   const projectsRef = useRef<HTMLElement>(null);
-  const sections = [
+  const skillsRef = useRef<HTMLElement>(null);
+  const navSections = [
     {section: "about", ref: aboutRef},
     {section: "projects", ref: projectsRef},
     {section: "experience", ref: experienceRef},
@@ -59,6 +63,9 @@ export default function CV() {
       case "projects":
         projectsRef.current?.scrollIntoView({ behavior: "smooth" });
         break;
+      case "skills":
+        skillsRef.current?.scrollIntoView({ behavior: "smooth" });
+        break;
       default:
         break;
     }
@@ -67,7 +74,7 @@ export default function CV() {
   useEffect(() => {
     function checkSection() {
       const currentScroll = document.scrollingElement?.scrollTop ?? 0;
-      const selected = sections.find(({ ref }) => {
+      const selected = navSections.find(({ ref }) => {
         const ele = ref.current;
         if (ele) {
           return currentScroll < (ele.offsetTop + ele.getBoundingClientRect().height);
@@ -117,6 +124,7 @@ export default function CV() {
         <About ref={aboutRef} paragraphs={data.sections.about} />
         <Projects ref={projectsRef} projects={data.sections.projects} />
         <Experience ref={experienceRef} experience={data.sections.experience} />
+        <Skills ref={skillsRef} skills={data.sections.skills} />
 
         <div className="cv__main__bottom" style={{marginBlockStart: "5rem"}}>
           Thanks for reading!
