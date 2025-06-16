@@ -31,6 +31,12 @@ export function ProjectEntry({ data } : { data: ProjectType }) {
         </div>
       </div>
       <p className="cv__entry-desc">{data.description}</p>
+
+      <div className="cv__entry-images">
+        {["1", "2", "3"].map((n, index) => {
+          return <img key={index} src={`/images/${data.imageUrl}-${n}.png`} />
+        })}
+      </div>
     </article>
   )
 }
