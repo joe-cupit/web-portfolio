@@ -10,6 +10,9 @@ import DotCursor from './components/DotCursor'
 
 function App() {
 
+  document.querySelector('body')?.setAttribute('data-theme', (localStorage.getItem('theme') ?? "light"));
+
+
   return (
     <BrowserRouter>
       {/* <Navbar /> */}

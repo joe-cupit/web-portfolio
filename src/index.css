@@ -1,8 +1,8 @@
 :root {
-  --clr-text-main: #f1f3f9;
-  --clr-text-light: #9399ac;
-  --clr-background: #080a11;
-  --clr-accent: #5aa3fd;
+  --clr-text-main: #0c0e18;
+  --clr-text-light: #696f84;
+  --clr-background: #f6f5f1;
+  --clr-accent: #0699aa;
 
 
   --fs-200: 0.875rem;
@@ -10,14 +10,28 @@
   --fs-400: 1.125rem;
   --fs-500: 1.5rem;
 
-  color-scheme: dark;
-  color: var(--clr-text-light);
-  background-color: var(--clr-background);
+  color-scheme: light;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --clr-text-main: #f2f3f9;
+  --clr-text-light: #9fa1a8;
+  --clr-background: #0a1617;
+  --clr-accent: #09c9da;
+}
+
+body {
+  color: var(--clr-text-light);
+  background-color: var(--clr-background);
+
+  transition: color 150ms, background-color 150ms;
 }
 
 
