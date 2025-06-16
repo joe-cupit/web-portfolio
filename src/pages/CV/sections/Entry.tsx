@@ -19,10 +19,18 @@ export function ExperienceEntry({ data } : { data: ExperienceType }) {
 export function ProjectEntry({ data } : { data: ProjectType }) {
   return (
     <article className="cv__entry cv__entry-project cv__entry-main">
-      <EntryTitle title={data.title} subtitle={data.subtitle} horizontal={true} />
+      <div className="cv__entry_title-group">
+        <h3 className="cv__entry-title">
+          {data.siteLink
+            ? <a href={data.siteLink} target="_blank">{data.title}</a>
+            : data.title
+          }
+        </h3>
+        <div className="cv__entry-date">
+          {data.subtitle}
+        </div>
+      </div>
       <p className="cv__entry-desc">{data.description}</p>
-      <ToolList tools={data.tools} />
-      {/* <img src={"/images/"+data.imageUrl} className="cv__entry_img" /> */}
     </article>
   )
 }
@@ -49,7 +57,7 @@ function ToolList({ tools } : { tools: string[] }) {
   return (
     <ul className="cv__entry-tools">
       {tools.map((tool, index) => {
-        return <li key={index} className="cv__entry-tool">{tool}</li>
+        return <li key={index} className="cv__entry-tool">{tool} </li>
       })}
     </ul>
   )

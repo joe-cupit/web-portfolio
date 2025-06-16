@@ -10,7 +10,7 @@ export default function Experience({ ref, experience } : { ref: React.RefObject<
       {experience.map((e, index) => {
         return <ExperienceEntry key={index} data={e} />
       })}
-      <OuterLink href="./cv/cv.pdf">View Full CV</OuterLink>
+      <OuterLink href="./cv.pdf">View Full CV</OuterLink>
     </section>
   )
 }

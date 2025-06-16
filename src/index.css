@@ -58,6 +58,14 @@ img {
   max-height: 100%;
 }
 
+button {
+  background: none;
+  border: none;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
 
 ::-moz-selection {
   color: var(--clr-background);

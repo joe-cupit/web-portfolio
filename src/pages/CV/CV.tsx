@@ -21,6 +21,8 @@ export type ProjectType = {
   imageUrl: string;
   description: string;
   tools: string[];
+  gitLink?: string;
+  siteLink?: string;
 }
 
 type CVType = {
@@ -77,13 +79,15 @@ export default function CV() {
       const selected = navSections.find(({ ref }) => {
         const ele = ref.current;
         if (ele) {
-          return currentScroll < (ele.offsetTop + ele.getBoundingClientRect().height);
+          return currentScroll + 30 < (ele.offsetTop + ele.getBoundingClientRect().height);
         }
       })
 
       if (selected) setCurrentSection(selected.section);
       else setCurrentSection("projects");
     }
+
+    setTimeout(checkSection, 100);
 
     window.addEventListener("scroll", checkSection);
     return () => {
@@ -123,7 +127,7 @@ export default function CV() {
           <a href="https://www.linkedin.com/in/joe-cupit/" target="_blank" title="Joe Cupit on LinkedIn">
             <svg xmlns="http://www.w3.org/2000/svg" width={50} viewBox="0 0 448 512" fill="currentColor"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
           </a>
-          <a href="./cv/cv.pdf" target="_blank" title="Full CV PDF">
+          <a href="./cv.pdf" target="_blank" title="Full CV PDF">
             <svg xmlns="http://www.w3.org/2000/svg" width={50} viewBox="0 0 384 512" fill="currentColor"><path d="M64 0C28.7 0 0 28.7 0 64L0 448c0 35.3 28.7 64 64 64l256 0c35.3 0 64-28.7 64-64l0-288-128 0c-17.7 0-32-14.3-32-32L224 0 64 0zM256 0l0 128 128 0L256 0zM112 256l160 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-160 0c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64l160 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-160 0c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64l160 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-160 0c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>
           </a>
           <button onClick={() => setTheme((currentTheme == "light") ? "dark" : "light")} title="Switch Theme">
@@ -140,8 +144,9 @@ export default function CV() {
         <Experience ref={experienceRef} experience={data.sections.experience} />
         <Skills ref={skillsRef} skills={data.sections.skills} />
 
-        <div className="cv__main__bottom" style={{marginBlockStart: "5rem"}}>
-          Thanks for reading!
+        <div className="cv__main__bottom">
+          <div>Layout inspired by <a href="https://brittanychiang.com/" target="_blank">brittanychiang.com</a></div>
+          <div>Joe Cupit, 2025</div>
         </div>
       </main>
     </div>
