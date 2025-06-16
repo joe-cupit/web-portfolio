@@ -5,6 +5,7 @@ import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import Projects from './pages/Projects'
 import CV from './pages/CV/CV'
+import DotCursor from './components/DotCursor'
 
 
 function App() {
@@ -12,6 +13,8 @@ function App() {
   return (
     <BrowserRouter>
       {/* <Navbar /> */}
+
+      <DotCursor />
 
       <Routes>
         <Route path='/' element={<Home />} />
