@@ -1,8 +1,8 @@
-import { BrowserRouter, Route, Routes } from 'react-router'
 import './App.css'
 
-import Navbar from './components/Navbar'
-import Home from './pages/Home'
+import { useEffect, useState } from 'react'
+import { Route, Routes, useLocation } from 'react-router'
+
 import Projects from './pages/Projects'
 import CV from './pages/CV/CV'
 import DotCursor from './components/DotCursor'
@@ -10,21 +10,29 @@ import DotCursor from './components/DotCursor'
 
 function App() {
 
+  // update theme if one is stored in local storage
   document.querySelector('body')?.setAttribute('data-theme', (localStorage.getItem('theme') ?? "light"));
 
 
+  // scroll to top when page changes, don't if back button is usesd
+  const [lastPoppedPage, setLastPoppedPage] = useState(null);
+  window.onpopstate = e => {
+    setLastPoppedPage(e?.state?.key);
+  }
+  const { key } = useLocation();
+  useEffect(() => {
+    if (key !== lastPoppedPage) window.scrollTo(0, 0);
+  }, [key]);
+
+
   return (
-    <BrowserRouter>
-      {/* <Navbar /> */}
-
+    <>
       <DotCursor />
-
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/' element={<CV />} />
         <Route path='/projects' element={<Projects />} />
-        <Route path='/cv' element={<CV />} />
       </Routes>
-    </BrowserRouter>
+    </>
   )
 }
 

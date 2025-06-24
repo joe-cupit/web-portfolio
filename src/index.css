@@ -30,6 +30,7 @@
 body {
   color: var(--clr-text-light);
   background-color: var(--clr-background);
+  min-height: 100vh;
 
   transition: color 150ms, background-color 150ms;
 }
