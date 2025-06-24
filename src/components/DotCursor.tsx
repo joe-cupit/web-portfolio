@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react"
+import { useLocation } from "react-router";
 
 export default function DotCursor() {
 
+  const { pathname } = useLocation();
   const [transform, setTransform] = useState([0, 0]);
 
   useEffect(() => {
@@ -14,6 +16,8 @@ export default function DotCursor() {
     if (isTouchDevice || prefersReducedMotion || !cursor) return;
 
     cursor.style.display = "block";
+    cursor.classList = "dot-cursor";
+
     const style = document.createElement("style");
     style.textContent = "* {cursor: none !important;}";
     document.head.appendChild(style);
@@ -56,7 +60,7 @@ export default function DotCursor() {
         item.removeEventListener('mouseleave', mouseLeaveDot);
       });
     })
-  }, [])
+  }, [pathname])
 
 
   return (
