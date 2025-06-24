@@ -9,6 +9,7 @@ import HTMLIcon from './html.svg?react';
 import CSSIcon from './css.svg?react';
 import FigmaIcon from './figma.svg?react';
 import DockerIcon from './docker.svg?react';
+import GitIcon from './git.svg?react';
 
 
 const icons : {[name: string] : ReactNode} = {
@@ -21,6 +22,7 @@ const icons : {[name: string] : ReactNode} = {
   "css": <CSSIcon />,
   "figma": <FigmaIcon />,
   "docker": <DockerIcon />,
+  "github": <GitIcon />,
 }
 
 export default icons;
